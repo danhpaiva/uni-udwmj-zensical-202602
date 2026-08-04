@@ -1,0 +1,129 @@
+site_name: "Usabilidade, Dev Web, Mobile e Jogos"
+site_url: https://danhpaiva.github.io/uni-udwmj-zensical-202602/
+site_author: Daniel Paiva
+
+repo_url: https://github.com/danhpaiva/uni-udwmj-zensical-202602
+repo_name: danhpaiva/uni-udwmj-zensical-202602
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: pt-BR
+  logo: assets/animaeducacao.jpg
+  favicon: assets/animaeducacao.jpg
+  font:
+    text: Inter # Fonte de texto do site
+    code: JetBrains Mono # Fonte monoespaçada dos blocos de código
+  palette:
+    # 3 estados: automático (segue o sistema) -> claro -> escuro
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Mudar para modo claro
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Mudar para modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Mudar para modo automático
+  features:
+    - navigation.tabs # Seções de topo viram abas no cabeçalho
+    - navigation.indexes # Permite página-índice em cada seção
+    - navigation.sections
+    - navigation.top # Botão "Voltar ao topo" automático
+    - toc.follow # O sumário lateral acompanha a rolagem
+    - navigation.tracking # Atualiza a URL conforme o aluno rola a página
+    - content.code.copy # Botão de copiar código em um clique
+    - content.action.edit # Botão "editar esta página" (usa repo_url + edit_uri)
+    - content.tabs.link # Sincroniza abas de mesmo rótulo na página inteira
+    - navigation.instant # Navegação SPA: troca de página sem recarregar tudo
+    - navigation.instant.progress # Barra de progresso ao carregar páginas
+    - search.suggest # Sugere a continuação da palavra na busca
+    - search.highlight # Realça os termos buscados na página
+
+nav:
+  - Home: index.md
+  - Guia do Professor: setup.md
+  - 🧰 Ferramentas: ferramentas.md
+  - 📖 Aulas:
+      - "01. Fundamentos da Web e HTML Semântico": aulas/01-aula.md
+      - "02. CSS: Estilização e Box Model": aulas/02-aula.md
+      - "03. Layouts Modernos: Flexbox e Grid": aulas/03-aula.md
+      - "04. Design Responsivo e Mobile First": aulas/04-aula.md
+      - "05. UI/UX: Usabilidade e Design Centrado no Usuário": aulas/05-aula.md
+      - "06. Acessibilidade na Web": aulas/06-aula.md
+      - "07. Prototipagem e Avaliação de Interfaces": aulas/07-aula.md
+      - "08. JavaScript: Fundamentos da Linguagem": aulas/08-aula.md
+      - "09. JavaScript: DOM e Eventos": aulas/09-aula.md
+      - "10. JavaScript Assíncrono e Consumo de APIs": aulas/10-aula.md
+      - "11. Ferramentas: Git, npm e Pré-processadores CSS": aulas/11-aula.md
+      - "12. Frameworks Frontend e Componentização": aulas/12-aula.md
+      - "13. Desenvolvimento Mobile Híbrido e Multiplataforma": aulas/13-aula.md
+      - "14. Matemática para Jogos": aulas/14-aula.md
+      - "15. Computação Gráfica: Canvas e Game Loop": aulas/15-aula.md
+      - "16. Desenvolvimento de Jogos Digitais com HTML5": aulas/16-aula.md
+  - 📝 Listas:
+      - "01. Sua Primeira Página Web": listas/01-lista.md
+      - "02. Dando Estilo às Caixas": listas/02-lista.md
+      - "03. Layouts que Encaixam": listas/03-lista.md
+      - "04. Responsivo em Qualquer Tela": listas/04-lista.md
+      - "05. Olhar Crítico de UX": listas/05-lista.md
+      - "06. Web para Todos": listas/06-lista.md
+      - "07. Do Rascunho ao Protótipo": listas/07-lista.md
+      - "08. Lógica com JavaScript": listas/08-lista.md
+      - "09. Página Viva com o DOM": listas/09-lista.md
+      - "10. Conectando com o Mundo (APIs)": listas/10-lista.md
+      - "11. Ferramentas Profissionais": listas/11-lista.md
+      - "12. Pensando em Componentes": listas/12-lista.md
+      - "13. Da Web para o Bolso (PWA)": listas/13-lista.md
+      - "14. Matemática que Move": listas/14-lista.md
+      - "15. Pixels em Movimento": listas/15-lista.md
+      - "16. Seu Primeiro Jogo Completo": listas/16-lista.md
+  # 📌 Projeto Integrador (a definir):
+  #     - Projeto Integrador: trabalhos/projeto.md
+
+# O Zensical ignora exclude_docs (o conteúdo listado é publicado normalmente,
+# mesmo assim). Quando existir uma pasta de rascunhos, coloque-a fora do
+# docs_dir (ex.: rascunhos/ na raiz do repo, não docs/rascunhos/) — só o que
+# está dentro de docs_dir é publicado.
+
+# plugins removidos na migração para Zensical:
+# - search: a busca é nativa no Zensical (sempre ativa, sem precisar declarar
+#   o plugin) e herda o idioma automaticamente de theme.language — a chave
+#   "lang" deste plugin não é mais honrada. Ainda no backlog do Zensical
+#   como módulo (Tier 1, https://zensical.org/compatibility/plugins/#tier-1,
+#   Backlog #34) para suportar configurações extras (ex.: lang manual,
+#   separator).
+# - git-revision-date-localized: ainda no backlog do Zensical como módulo
+#   (Tier 2, https://zensical.org/compatibility/plugins/#tier-2, Backlog #18).
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+# Para habilitar estatísticas, crie um ID no Google Analytics e preencha abaixo:
+# extra:
+#   analytics:
+#     provider: google
+#     property: !ENV [GA_ID, "G-XXXXXXXXXX"] # Busca nas variáveis de ambiente ou usa o padrão

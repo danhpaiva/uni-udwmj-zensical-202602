@@ -1,3 +1,6 @@
+# Zensical/MkDocs build output
+site/
+
 # Logs
 logs
 *.log
